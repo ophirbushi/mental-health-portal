@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="app-sidenav-container">
+	<mat-sidenav #drawer [(opened)]="sidenavOpened" mode="over" class="app-sidenav">
+		<mat-toolbar color="primary">Menu</mat-toolbar>
+		<mat-nav-list>
+			<a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+			<a mat-list-item routerLink="/chat" (click)="drawer.close()">Chat</a>
+			<!-- Add more links as needed -->
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar color="primary">
+			<button mat-icon-button (click)="toggleSidenav()">
+				<mat-icon>menu</mat-icon>
+			</button>
+			<span style="margin-left: 16px;">{{ title() }}</span>
+			<span class="spacer"></span>
+			<nav class="desktop-nav">
+				<a mat-button routerLink="/">Home</a>
+				<a mat-button routerLink="/chat">Chat</a>
+				<!-- Add more links as needed -->
+			</nav>
+		</mat-toolbar>
+		<div class="app-content">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>

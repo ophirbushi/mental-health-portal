@@ -1,0 +1,30 @@
+// Layout styles for app component
+.app-sidenav-container {
+	height: 100vh;
+}
+
+.app-sidenav {
+	width: 220px;
+}
+
+.app-content {
+	padding: 24px;
+}
+
+.spacer {
+	flex: 1 1 auto;
+}
+
+.desktop-nav {
+	display: none;
+}
+
+@media (min-width: 600px) {
+	.app-sidenav {
+		display: none;
+	}
+	.desktop-nav {
+		display: flex;
+		gap: 8px;
+	}
+}
